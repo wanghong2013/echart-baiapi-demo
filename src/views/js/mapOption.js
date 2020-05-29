@@ -1,42 +1,4 @@
-<template>
-  <div class="china-wrapper">
-    <header class="data-header">
-      <Row>
-        <Col
-          :xs="{ span: 6, offset: 2 }"
-          :lg="{ span: 6, offset: 2 }"
-          :style="{ background: 'red' }"
-        >
-          <h3>1110</h3>
-          <h4>年检报警</h4>
-        </Col>
-        <Col
-          :xs="{ span: 6, offset: 2 }"
-          :lg="{ span: 6, offset: 2 }"
-          :style="{ background: 'red' }"
-        >
-          <h3>1110</h3>
-          <h4>合同报警</h4>
-        </Col>
-        <Col
-          :xs="{ span: 6, offset: 2 }"
-          :lg="{ span: 6, offset: 2 }"
-          :style="{ background: 'red' }"
-        >
-          <h3>1110</h3>
-          <h4>付款报警</h4>
-        </Col>
-      </Row>
-    </header>
-    <div class="chinaContent">
-      <div class="mapArea" id="mapArea"></div>
-    </div>
-  </div>
-</template>
-<script>
-import { Row, Col } from "view-design";
-// import option from './js/mapOption'
- const option = {
+option = {
     title: {
         text: '订单量',
         subtext: '纯属虚构',
@@ -133,40 +95,4 @@ import { Row, Col } from "view-design";
     ]
 };
 
-export default {
-  name: "BaiduMap",
-  data() {
-    return {};
-  },
-
-  created() {},
-  mounted() {
-    const mapArea = document.getElementById("mapArea");
-    console.log(mapArea);
-
-    const charts = this.$echarts.init(mapArea);
-    
-    charts.setOption(option);
-  },
-  methods: {},
-};
-</script>
-<style lang="less" scoped>
-.china-wrapper {
-  display: flex;
-  height: calc(100% - 80px);
-  flex-direction: column;
-  width: 100%;
-  .data-header {
-    overflow: hidden;
-  }
-  .chinaContent {
-    flex: 1;
-    .mapArea {
-      width: 100%;
-      height: 100%;
-    }
-    // background: yellow;
-  }
-}
-</style>
+export default option;
