@@ -30,6 +30,7 @@
     </header>
     <div class="chinaContent">
       <div class="mapArea" id="mapArea"></div>
+      <div class="data-wrapper"></div>
     </div>
   </div>
 </template>
@@ -50,6 +51,7 @@ import { Row, Col } from "view-design";
         left: 'left',
         data: ['订单量']
     },
+    /* 左下角 显示的颜色区分 */
     visualMap: {
         type: 'piecewise',
         pieces: [
@@ -64,18 +66,19 @@ import { Row, Col } from "view-design";
         ],
         color: ['#E0022B', '#E09107', '#A3E00B']
     },
-    toolbox: {
-        show: true,
-        orient: 'vertical',
-        left: 'right',
-        top: 'center',
-        feature: {
-            mark: {show: true},
-            dataView: {show: true, readOnly: false},
-            restore: {show: true},
-            saveAsImage: {show: true}
-        }
-    },
+    /* 右侧工具栏 */
+    // toolbox: {
+    //     show: true,
+    //     orient: 'vertical',
+    //     left: 'right',
+    //     top: 'center',
+    //     feature: {
+    //         mark: {show: true},
+    //         dataView: {show: true, readOnly: false},
+    //         restore: {show: true},
+    //         saveAsImage: {show: true}
+    //     }
+    // },
     roamController: {
         show: true,
         left: 'right',
@@ -161,10 +164,19 @@ export default {
     overflow: hidden;
   }
   .chinaContent {
+    position: relative;
     flex: 1;
     .mapArea {
       width: 100%;
       height: 100%;
+    }
+    .data-wrapper{
+      position: absolute;
+      width: 500px;
+      height: 400px;
+      right: 0;
+      top: 50%;
+      background: red;
     }
     // background: yellow;
   }
