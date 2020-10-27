@@ -161,6 +161,7 @@
                 ];
 
                 var option = {
+
                     backgroundColor: '#fff',//地图背景色
                     title: {
                         text: '营销策略',
@@ -210,6 +211,7 @@
                             type: 'map',
                             map: 'china',
                             geoIndex: 1,
+
                             aspectScale: 0.75, //长宽比
                             symbolSize: 20,
                             data: data,
